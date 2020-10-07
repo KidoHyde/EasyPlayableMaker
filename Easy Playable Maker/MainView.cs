@@ -40,7 +40,7 @@ namespace Easy_Playable_Maker
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.github.com");
+            System.Diagnostics.Process.Start("https://github.com/KidoHyde/EasyPlayableMaker");
         }
 
         private void button1_Click(object sender, EventArgs e)

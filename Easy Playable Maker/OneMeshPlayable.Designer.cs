@@ -59,12 +59,17 @@
             this.PonytailText = new System.Windows.Forms.TextBox();
             this.FaceText = new System.Windows.Forms.TextBox();
             this.EyesText = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TestBox = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.PitchText = new System.Windows.Forms.TextBox();
+            this.VoicePitch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // MakeFile
             // 
-            this.MakeFile.Location = new System.Drawing.Point(177, 311);
+            this.MakeFile.Location = new System.Drawing.Point(177, 394);
             this.MakeFile.Name = "MakeFile";
             this.MakeFile.Size = new System.Drawing.Size(75, 23);
             this.MakeFile.TabIndex = 0;
@@ -146,7 +151,7 @@
             // 
             this.Index.AutoSize = true;
             this.Index.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Index.Location = new System.Drawing.Point(358, 181);
+            this.Index.Location = new System.Drawing.Point(364, 181);
             this.Index.Name = "Index";
             this.Index.Size = new System.Drawing.Size(110, 17);
             this.Index.TabIndex = 12;
@@ -156,7 +161,7 @@
             // 
             this.Eyes.AutoSize = true;
             this.Eyes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Eyes.Location = new System.Drawing.Point(394, 207);
+            this.Eyes.Location = new System.Drawing.Point(400, 207);
             this.Eyes.Name = "Eyes";
             this.Eyes.Size = new System.Drawing.Size(39, 17);
             this.Eyes.TabIndex = 13;
@@ -166,7 +171,7 @@
             // 
             this.Face.AutoSize = true;
             this.Face.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Face.Location = new System.Drawing.Point(394, 234);
+            this.Face.Location = new System.Drawing.Point(400, 234);
             this.Face.Name = "Face";
             this.Face.Size = new System.Drawing.Size(39, 17);
             this.Face.TabIndex = 14;
@@ -176,7 +181,7 @@
             // 
             this.Ponytail.AutoSize = true;
             this.Ponytail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ponytail.Location = new System.Drawing.Point(384, 260);
+            this.Ponytail.Location = new System.Drawing.Point(390, 260);
             this.Ponytail.Name = "Ponytail";
             this.Ponytail.Size = new System.Drawing.Size(58, 17);
             this.Ponytail.TabIndex = 15;
@@ -186,7 +191,7 @@
             // 
             this.IceStatue.AutoSize = true;
             this.IceStatue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IceStatue.Location = new System.Drawing.Point(359, 15);
+            this.IceStatue.Location = new System.Drawing.Point(365, 15);
             this.IceStatue.Name = "IceStatue";
             this.IceStatue.Size = new System.Drawing.Size(109, 17);
             this.IceStatue.TabIndex = 16;
@@ -196,7 +201,7 @@
             // 
             this.PlayerIcon.AutoSize = true;
             this.PlayerIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerIcon.Location = new System.Drawing.Point(374, 41);
+            this.PlayerIcon.Location = new System.Drawing.Point(380, 41);
             this.PlayerIcon.Name = "PlayerIcon";
             this.PlayerIcon.Size = new System.Drawing.Size(78, 17);
             this.PlayerIcon.TabIndex = 17;
@@ -206,7 +211,7 @@
             // 
             this.Exp.AutoSize = true;
             this.Exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exp.Location = new System.Drawing.Point(360, 117);
+            this.Exp.Location = new System.Drawing.Point(366, 117);
             this.Exp.Name = "Exp";
             this.Exp.Size = new System.Drawing.Size(106, 17);
             this.Exp.TabIndex = 30;
@@ -216,7 +221,7 @@
             // 
             this.ExpComp.AutoSize = true;
             this.ExpComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpComp.Location = new System.Drawing.Point(333, 90);
+            this.ExpComp.Location = new System.Drawing.Point(339, 90);
             this.ExpComp.Name = "ExpComp";
             this.ExpComp.Size = new System.Drawing.Size(160, 17);
             this.ExpComp.TabIndex = 27;
@@ -224,7 +229,7 @@
             // 
             // Output
             // 
-            this.Output.Location = new System.Drawing.Point(534, 311);
+            this.Output.Location = new System.Drawing.Point(534, 394);
             this.Output.Name = "Output";
             this.Output.Size = new System.Drawing.Size(149, 23);
             this.Output.TabIndex = 43;
@@ -253,14 +258,14 @@
             // 
             // IceStatueText
             // 
-            this.IceStatueText.Location = new System.Drawing.Point(490, 14);
+            this.IceStatueText.Location = new System.Drawing.Point(483, 14);
             this.IceStatueText.Name = "IceStatueText";
             this.IceStatueText.Size = new System.Drawing.Size(205, 20);
             this.IceStatueText.TabIndex = 48;
             // 
             // PlayerIconText
             // 
-            this.PlayerIconText.Location = new System.Drawing.Point(490, 40);
+            this.PlayerIconText.Location = new System.Drawing.Point(483, 40);
             this.PlayerIconText.Name = "PlayerIconText";
             this.PlayerIconText.Size = new System.Drawing.Size(205, 20);
             this.PlayerIconText.TabIndex = 47;
@@ -296,38 +301,99 @@
             // 
             // BaseEXPText
             // 
-            this.BaseEXPText.Location = new System.Drawing.Point(490, 115);
+            this.BaseEXPText.Location = new System.Drawing.Point(483, 115);
             this.BaseEXPText.Name = "BaseEXPText";
             this.BaseEXPText.Size = new System.Drawing.Size(205, 20);
             this.BaseEXPText.TabIndex = 64;
             // 
             // PonytailText
             // 
-            this.PonytailText.Location = new System.Drawing.Point(478, 258);
+            this.PonytailText.Location = new System.Drawing.Point(483, 258);
             this.PonytailText.Name = "PonytailText";
             this.PonytailText.Size = new System.Drawing.Size(205, 20);
             this.PonytailText.TabIndex = 74;
             // 
             // FaceText
             // 
-            this.FaceText.Location = new System.Drawing.Point(478, 232);
+            this.FaceText.Location = new System.Drawing.Point(483, 232);
             this.FaceText.Name = "FaceText";
             this.FaceText.Size = new System.Drawing.Size(205, 20);
             this.FaceText.TabIndex = 73;
             // 
             // EyesText
             // 
-            this.EyesText.Location = new System.Drawing.Point(478, 205);
+            this.EyesText.Location = new System.Drawing.Point(483, 205);
             this.EyesText.Name = "EyesText";
             this.EyesText.Size = new System.Drawing.Size(205, 20);
             this.EyesText.TabIndex = 72;
+            // 
+            // textBox1
+            // 
+            this.textBox1.AcceptsReturn = true;
+            this.textBox1.AcceptsTab = true;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textBox1.Location = new System.Drawing.Point(852, 12);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(150, 461);
+            this.textBox1.TabIndex = 86;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBox1.WordWrap = false;
+            // 
+            // TestBox
+            // 
+            this.TestBox.AcceptsReturn = true;
+            this.TestBox.AcceptsTab = true;
+            this.TestBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestBox.Location = new System.Drawing.Point(1008, 12);
+            this.TestBox.Multiline = true;
+            this.TestBox.Name = "TestBox";
+            this.TestBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.TestBox.Size = new System.Drawing.Size(170, 461);
+            this.TestBox.TabIndex = 85;
+            this.TestBox.WordWrap = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(705, 17);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(141, 17);
+            this.checkBox1.TabIndex = 84;
+            this.checkBox1.Text = "Use Custom Voice Lines";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // PitchText
+            // 
+            this.PitchText.Location = new System.Drawing.Point(483, 300);
+            this.PitchText.Name = "PitchText";
+            this.PitchText.Size = new System.Drawing.Size(205, 20);
+            this.PitchText.TabIndex = 88;
+            // 
+            // VoicePitch
+            // 
+            this.VoicePitch.AutoSize = true;
+            this.VoicePitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VoicePitch.Location = new System.Drawing.Point(380, 302);
+            this.VoicePitch.Name = "VoicePitch";
+            this.VoicePitch.Size = new System.Drawing.Size(78, 17);
+            this.VoicePitch.TabIndex = 87;
+            this.VoicePitch.Text = "Voice Pitch";
             // 
             // OneMeshPlayable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(767, 361);
+            this.ClientSize = new System.Drawing.Size(1196, 482);
+            this.Controls.Add(this.PitchText);
+            this.Controls.Add(this.VoicePitch);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TestBox);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.PonytailText);
             this.Controls.Add(this.FaceText);
             this.Controls.Add(this.EyesText);
@@ -399,6 +465,11 @@
 		private System.Windows.Forms.TextBox BText;
 		private System.Windows.Forms.TextBox GText;
 		private System.Windows.Forms.TextBox RText;
-	}
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TestBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox PitchText;
+        private System.Windows.Forms.Label VoicePitch;
+    }
 }
 

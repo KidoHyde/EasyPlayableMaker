@@ -111,6 +111,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.TestBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PitchText = new System.Windows.Forms.TextBox();
+            this.VoicePitch = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // MakeFile
@@ -267,7 +269,7 @@
             // 
             this.IceStatue.AutoSize = true;
             this.IceStatue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IceStatue.Location = new System.Drawing.Point(359, 15);
+            this.IceStatue.Location = new System.Drawing.Point(358, 15);
             this.IceStatue.Name = "IceStatue";
             this.IceStatue.Size = new System.Drawing.Size(109, 17);
             this.IceStatue.TabIndex = 16;
@@ -277,7 +279,7 @@
             // 
             this.PlayerIcon.AutoSize = true;
             this.PlayerIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerIcon.Location = new System.Drawing.Point(374, 41);
+            this.PlayerIcon.Location = new System.Drawing.Point(373, 41);
             this.PlayerIcon.Name = "PlayerIcon";
             this.PlayerIcon.Size = new System.Drawing.Size(78, 17);
             this.PlayerIcon.TabIndex = 17;
@@ -287,7 +289,7 @@
             // 
             this.VirtBody.AutoSize = true;
             this.VirtBody.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VirtBody.Location = new System.Drawing.Point(352, 111);
+            this.VirtBody.Location = new System.Drawing.Point(351, 111);
             this.VirtBody.Name = "VirtBody";
             this.VirtBody.Size = new System.Drawing.Size(122, 17);
             this.VirtBody.TabIndex = 21;
@@ -297,7 +299,7 @@
             // 
             this.VirtLegs.AutoSize = true;
             this.VirtLegs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VirtLegs.Location = new System.Drawing.Point(353, 138);
+            this.VirtLegs.Location = new System.Drawing.Point(352, 138);
             this.VirtLegs.Name = "VirtLegs";
             this.VirtLegs.Size = new System.Drawing.Size(121, 17);
             this.VirtLegs.TabIndex = 20;
@@ -307,7 +309,7 @@
             // 
             this.VirtFull.AutoSize = true;
             this.VirtFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VirtFull.Location = new System.Drawing.Point(336, 164);
+            this.VirtFull.Location = new System.Drawing.Point(335, 164);
             this.VirtFull.Name = "VirtFull";
             this.VirtFull.Size = new System.Drawing.Size(154, 17);
             this.VirtFull.TabIndex = 19;
@@ -317,7 +319,7 @@
             // 
             this.VirtHead.AutoSize = true;
             this.VirtHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VirtHead.Location = new System.Drawing.Point(351, 85);
+            this.VirtHead.Location = new System.Drawing.Point(350, 85);
             this.VirtHead.Name = "VirtHead";
             this.VirtHead.Size = new System.Drawing.Size(124, 17);
             this.VirtHead.TabIndex = 18;
@@ -367,7 +369,7 @@
             // 
             this.Exp.AutoSize = true;
             this.Exp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exp.Location = new System.Drawing.Point(360, 228);
+            this.Exp.Location = new System.Drawing.Point(359, 228);
             this.Exp.Name = "Exp";
             this.Exp.Size = new System.Drawing.Size(106, 17);
             this.Exp.TabIndex = 30;
@@ -377,7 +379,7 @@
             // 
             this.ExpShadow.AutoSize = true;
             this.ExpShadow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpShadow.Location = new System.Drawing.Point(384, 255);
+            this.ExpShadow.Location = new System.Drawing.Point(383, 255);
             this.ExpShadow.Name = "ExpShadow";
             this.ExpShadow.Size = new System.Drawing.Size(58, 17);
             this.ExpShadow.TabIndex = 29;
@@ -387,7 +389,7 @@
             // 
             this.ExpWire.AutoSize = true;
             this.ExpWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpWire.Location = new System.Drawing.Point(377, 281);
+            this.ExpWire.Location = new System.Drawing.Point(376, 281);
             this.ExpWire.Name = "ExpWire";
             this.ExpWire.Size = new System.Drawing.Size(73, 17);
             this.ExpWire.TabIndex = 28;
@@ -397,7 +399,7 @@
             // 
             this.ExpComp.AutoSize = true;
             this.ExpComp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpComp.Location = new System.Drawing.Point(333, 201);
+            this.ExpComp.Location = new System.Drawing.Point(332, 201);
             this.ExpComp.Name = "ExpComp";
             this.ExpComp.Size = new System.Drawing.Size(160, 17);
             this.ExpComp.TabIndex = 27;
@@ -407,7 +409,7 @@
             // 
             this.ExpRad.AutoSize = true;
             this.ExpRad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpRad.Location = new System.Drawing.Point(378, 308);
+            this.ExpRad.Location = new System.Drawing.Point(377, 308);
             this.ExpRad.Name = "ExpRad";
             this.ExpRad.Size = new System.Drawing.Size(71, 17);
             this.ExpRad.TabIndex = 31;
@@ -417,7 +419,7 @@
             // 
             this.Invis.AutoSize = true;
             this.Invis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Invis.Location = new System.Drawing.Point(363, 376);
+            this.Invis.Location = new System.Drawing.Point(362, 376);
             this.Invis.Name = "Invis";
             this.Invis.Size = new System.Drawing.Size(101, 17);
             this.Invis.TabIndex = 33;
@@ -427,7 +429,7 @@
             // 
             this.Doodle.AutoSize = true;
             this.Doodle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Doodle.Location = new System.Drawing.Point(372, 349);
+            this.Doodle.Location = new System.Drawing.Point(371, 349);
             this.Doodle.Name = "Doodle";
             this.Doodle.Size = new System.Drawing.Size(82, 17);
             this.Doodle.TabIndex = 32;
@@ -559,14 +561,14 @@
             // 
             // IceStatueText
             // 
-            this.IceStatueText.Location = new System.Drawing.Point(490, 14);
+            this.IceStatueText.Location = new System.Drawing.Point(492, 14);
             this.IceStatueText.Name = "IceStatueText";
             this.IceStatueText.Size = new System.Drawing.Size(205, 20);
             this.IceStatueText.TabIndex = 48;
             // 
             // PlayerIconText
             // 
-            this.PlayerIconText.Location = new System.Drawing.Point(490, 40);
+            this.PlayerIconText.Location = new System.Drawing.Point(492, 40);
             this.PlayerIconText.Name = "PlayerIconText";
             this.PlayerIconText.Size = new System.Drawing.Size(205, 20);
             this.PlayerIconText.TabIndex = 47;
@@ -601,28 +603,28 @@
             // 
             // VirtFullText
             // 
-            this.VirtFullText.Location = new System.Drawing.Point(490, 162);
+            this.VirtFullText.Location = new System.Drawing.Point(492, 162);
             this.VirtFullText.Name = "VirtFullText";
             this.VirtFullText.Size = new System.Drawing.Size(205, 20);
             this.VirtFullText.TabIndex = 56;
             // 
             // VirtLegsText
             // 
-            this.VirtLegsText.Location = new System.Drawing.Point(490, 136);
+            this.VirtLegsText.Location = new System.Drawing.Point(492, 136);
             this.VirtLegsText.Name = "VirtLegsText";
             this.VirtLegsText.Size = new System.Drawing.Size(205, 20);
             this.VirtLegsText.TabIndex = 55;
             // 
             // VirtBodyText
             // 
-            this.VirtBodyText.Location = new System.Drawing.Point(490, 109);
+            this.VirtBodyText.Location = new System.Drawing.Point(492, 109);
             this.VirtBodyText.Name = "VirtBodyText";
             this.VirtBodyText.Size = new System.Drawing.Size(205, 20);
             this.VirtBodyText.TabIndex = 54;
             // 
             // VirtHeadText
             // 
-            this.VirtHeadText.Location = new System.Drawing.Point(490, 83);
+            this.VirtHeadText.Location = new System.Drawing.Point(492, 83);
             this.VirtHeadText.Name = "VirtHeadText";
             this.VirtHeadText.Size = new System.Drawing.Size(205, 20);
             this.VirtHeadText.TabIndex = 53;
@@ -678,21 +680,21 @@
             // 
             // WireEXPText
             // 
-            this.WireEXPText.Location = new System.Drawing.Point(490, 279);
+            this.WireEXPText.Location = new System.Drawing.Point(492, 279);
             this.WireEXPText.Name = "WireEXPText";
             this.WireEXPText.Size = new System.Drawing.Size(205, 20);
             this.WireEXPText.TabIndex = 66;
             // 
             // ShadowEXPText
             // 
-            this.ShadowEXPText.Location = new System.Drawing.Point(490, 253);
+            this.ShadowEXPText.Location = new System.Drawing.Point(492, 253);
             this.ShadowEXPText.Name = "ShadowEXPText";
             this.ShadowEXPText.Size = new System.Drawing.Size(205, 20);
             this.ShadowEXPText.TabIndex = 65;
             // 
             // BaseEXPText
             // 
-            this.BaseEXPText.Location = new System.Drawing.Point(490, 226);
+            this.BaseEXPText.Location = new System.Drawing.Point(492, 226);
             this.BaseEXPText.Name = "BaseEXPText";
             this.BaseEXPText.Size = new System.Drawing.Size(205, 20);
             this.BaseEXPText.TabIndex = 64;
@@ -727,7 +729,7 @@
             // 
             // RadEXPText
             // 
-            this.RadEXPText.Location = new System.Drawing.Point(490, 306);
+            this.RadEXPText.Location = new System.Drawing.Point(492, 306);
             this.RadEXPText.Name = "RadEXPText";
             this.RadEXPText.Size = new System.Drawing.Size(205, 20);
             this.RadEXPText.TabIndex = 70;
@@ -762,14 +764,14 @@
             // 
             // InvisibleText
             // 
-            this.InvisibleText.Location = new System.Drawing.Point(490, 374);
+            this.InvisibleText.Location = new System.Drawing.Point(492, 374);
             this.InvisibleText.Name = "InvisibleText";
             this.InvisibleText.Size = new System.Drawing.Size(205, 20);
             this.InvisibleText.TabIndex = 76;
             // 
             // DoodleText
             // 
-            this.DoodleText.Location = new System.Drawing.Point(490, 347);
+            this.DoodleText.Location = new System.Drawing.Point(492, 347);
             this.DoodleText.Name = "DoodleText";
             this.DoodleText.Size = new System.Drawing.Size(205, 20);
             this.DoodleText.TabIndex = 75;
@@ -818,6 +820,7 @@
             this.TestBox.Size = new System.Drawing.Size(170, 461);
             this.TestBox.TabIndex = 82;
             this.TestBox.WordWrap = false;
+            this.TestBox.TextChanged += new System.EventHandler(this.TestBox_TextChanged);
             // 
             // textBox1
             // 
@@ -833,6 +836,24 @@
             this.textBox1.TabIndex = 83;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             this.textBox1.WordWrap = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // PitchText
+            // 
+            this.PitchText.Location = new System.Drawing.Point(492, 427);
+            this.PitchText.Name = "PitchText";
+            this.PitchText.Size = new System.Drawing.Size(205, 20);
+            this.PitchText.TabIndex = 85;
+            // 
+            // VoicePitch
+            // 
+            this.VoicePitch.AutoSize = true;
+            this.VoicePitch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VoicePitch.Location = new System.Drawing.Point(373, 429);
+            this.VoicePitch.Name = "VoicePitch";
+            this.VoicePitch.Size = new System.Drawing.Size(78, 17);
+            this.VoicePitch.TabIndex = 84;
+            this.VoicePitch.Text = "Voice Pitch";
             // 
             // MainPlayableWindow
             // 
@@ -840,6 +861,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1459, 488);
+            this.Controls.Add(this.PitchText);
+            this.Controls.Add(this.VoicePitch);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TestBox);
             this.Controls.Add(this.checkBox1);
@@ -1015,6 +1038,8 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox TestBox;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PitchText;
+        private System.Windows.Forms.Label VoicePitch;
     }
 }
 

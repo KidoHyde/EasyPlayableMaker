@@ -17,7 +17,9 @@ namespace Easy_Playable_Maker
 		public OneMeshPlayable()
 		{
 			InitializeComponent();
-		}
+            TestBox.Hide();
+            textBox1.Hide();
+        }
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -47,12 +49,14 @@ namespace Easy_Playable_Maker
 			if (String.IsNullOrEmpty(PonytailText.Text)) { PonytailText.Text = "-1"; }
 			if (String.IsNullOrEmpty(FaceText.Text)) { FaceText.Text = "-1"; }
 			if (String.IsNullOrEmpty(EyesText.Text)) { EyesText.Text = "-1"; }
-			if (String.IsNullOrEmpty(BaseEXPText.Text)) { BaseEXPText.Text = "class'Hat_ExpressionComponent_HatKid'"; }
+			if (String.IsNullOrEmpty(BaseEXPText.Text)) { BaseEXPText.Text = "Hat_ExpressionComponent_HatKid"; }
 			if (String.IsNullOrEmpty(BText.Text)) { BText.Text = "174"; }
 			if (String.IsNullOrEmpty(GText.Text)) { GText.Text = "217"; }
 			if (String.IsNullOrEmpty(RText.Text)) { RText.Text = "255"; }
+            if (String.IsNullOrEmpty(PitchText.Text)) { PitchText.Text = "1"; }
 
-			string fileName = PrefixText.Text+"_Player_"+PlayerNameText.Text+".uc";
+
+            string fileName = PrefixText.Text+"_Player_"+PlayerNameText.Text+".uc";
 			pathString = System.IO.Path.Combine(pathString, fileName);
 
 
@@ -66,9 +70,67 @@ namespace Easy_Playable_Maker
 				{
 					writer.WriteLine("class " + PrefixText.Text + "_Player_" + PlayerNameText.Text + " extends Hat_Player_HatKid;");
 					writer.WriteLine(Funnies[index]);
-                    writer.WriteLine("\n\n\n\ndefaultproperties\n{\n	Begin Object Name=Mesh0\n		SkeletalMesh=" + FullModelText.Text + "\n		AnimSets(0)=AnimSet'HatInTime_Characters_HatKid.AnimSet.HatKidV2_Anims'\n		AnimSets(1)=AnimSet'HatInTime_Characters_HatKid.AnimSet.HatKidV2_Attack_Anims'\n		AnimSets(2)=AnimSet'HatInTime_Characters_HatKid2.AnimSet.HatKidV2_Cruise'\n\n		AnimTreeTemplate = AnimTree'HatInTime_Characters.AnimTree.PlatformPlayer_AnimTree'\n		PhysicsAsset=PhysicsAsset'HatinTime_Characters_CoPartner.Physics.CoPartner_Physics'\n		Translation=(Z=-36, Y=0, X=0)\n        \n		bNoSelfShadow=true\n	End Object\n	\n	Begin Object Name=OccludedMesh0\n		Materials(0)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(1)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(2)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(3)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(4)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(5)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(6)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(7)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(8)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(9)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(10)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(11)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(12)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(13)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(14)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(15)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(16)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(17)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		SkeletalMesh=" + FullModelText.Text + "\n	End Object\n	\n	Begin Object Class=" + BaseEXPText.Text + " Name=Expression1\n	End Object\n	Components.Add(Expression1);\n	ExpressionComponent = Expression1;\n	\n	Begin Object Name=StatueFall0\n		StaticMesh=" + IceStatueText.Text + "\n		Translation=(Z=15, Y=0, X=0)\n	End Object\n	\n\n	// properties\n	ObjectiveActorClass = class'" + PrefixText.Text + "_ObjectiveActor_" + PlayerNameText.Text + "'\n	CanWearHatKidCosmetics = true\n	  MaterialIndexEyes = " + EyesText.Text + "\n      MaterialIndexFace = " + FaceText.Text + "\n	  MaterialSectionPonytail = " + PonytailText.Text + "\n	  \n	SkinColor = (R=" + RText.Text + ",G=" + GText.Text + ",B=" + BText.Text + ")\n\n	\n	PlayerVisualClass(0) = class'" + PrefixText.Text + "_Player_" + PlayerNameText.Text + "'\n}\n\nsimulated function UpdateSkin()\n{\n	Super.UpdateSkin();\n\n\n	Hat_InventoryManager(InvManager).RemoveCosmeticUpperBody();\n	Hat_InventoryManager(InvManager).RemoveCosmeticLegs();\n\n}\n\nsimulated event Tick(float d)\n{\n	Super.Tick(d);\n\n}\n\n\nstatic function ConvertGhostPartyPlayer(Hat_GhostPartyPlayer gp)\n{\n	if (gp.SkeletalMeshComponent == None) return;\n	gp.SkeletalMeshComponent.SetSkeletalMesh(" + FullModelText.Text + ");\n	gp.SkeletalMeshComponent.SetPhysicsAsset(PhysicsAsset'HatinTime_Characters_CoPartner.Physics.CoPartner_Physics');\n	gp.SkeletalMeshComponent.SetMaterial(0, None);\n	gp.SkeletalMeshComponent.SetMaterial(1, None);\n	gp.SkeletalMeshComponent.SetMaterial(2, None);\n	gp.SkeletalMeshComponent.SetMaterial(3, None);\n	gp.SkeletalMeshComponent.SetMaterial(4, None);\n	gp.SkeletalMeshComponent.SetMaterial(5, None);\n}\n\nstatic function ConvertNPCPlayer(Hat_NPC_Player npc)\n{\n	local Hat_ExpressionComponent exp;\n\n	npc.DisableHats = true;\n	npc.DisableMasks = true;\n	npc.DisableUpperBody = true;\n	npc.DisableLegs = true;\n	npc.AddDefaultInventory();\n\n	// fix face\n	npc.SkeletalMeshComponent.SetMaterial(0, default.Mesh.GetMaterial(0));\n	npc.SkeletalMeshComponent.SetMaterial(1, default.Mesh.GetMaterial(1));\n	npc.SkeletalMeshComponent.SetMaterial(2, default.Mesh.GetMaterial(2));\n	npc.SkeletalMeshComponent.SetMaterial(3, default.Mesh.GetMaterial(3));\n	npc.SkeletalMeshComponent.SetMaterial(4, default.Mesh.GetMaterial(4));\n	npc.SkeletalMeshComponent.SetMaterial(5, default.Mesh.GetMaterial(5));\n	exp = new class'" + BaseEXPText.Text + "';\n	npc.DetachComponent(npc.Expression);\n	npc.AttachComponent(exp);\n	npc.Expression = exp;\n	npc.Expression.Init(npc);\n}");
+                    writer.WriteLine("\n\n\nsimulated function AudioComponent PlayVoice(SoundCue c, optional float relaxtime = 0, optional bool ignorerelax, optional bool isconversation) \n{ \n	local AudioComponent a; \n \n	a = Super.PlayVoice(c, relaxtime, ignorerelax); \n \n	if (a != None && !isconversation) \n	{ \n		a.PitchMultiplier = " + PitchText.Text + "; \n	} \n	return a; \n} \n\ndefaultproperties\n{\n	Begin Object Name=Mesh0\n		SkeletalMesh=" + FullModelText.Text + "\n		AnimSets(0)=AnimSet'HatInTime_Characters_HatKid.AnimSet.HatKidV2_Anims'\n		AnimSets(1)=AnimSet'HatInTime_Characters_HatKid.AnimSet.HatKidV2_Attack_Anims'\n		AnimSets(2)=AnimSet'HatInTime_Characters_HatKid2.AnimSet.HatKidV2_Cruise'\n\n		AnimTreeTemplate = AnimTree'HatInTime_Characters.AnimTree.PlatformPlayer_AnimTree'\n		PhysicsAsset=PhysicsAsset'HatinTime_Characters_CoPartner.Physics.CoPartner_Physics'\n		Translation=(Z=-36, Y=0, X=0)\n        \n		bNoSelfShadow=true\n	End Object\n	\n	Begin Object Name=OccludedMesh0\n		Materials(0)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(1)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(2)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(3)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(4)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(5)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(6)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(7)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(8)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(9)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(10)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(11)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(12)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(13)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(14)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(15)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(16)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		Materials(17)=Material'HatInTime_Characters.Materials.OccludedMaterial'\n		SkeletalMesh=" + FullModelText.Text + "\n	End Object\n	\n	Begin Object Class=" + BaseEXPText.Text + " Name=Expression1\n	End Object\n	Components.Add(Expression1);\n	ExpressionComponent = Expression1;\n	\n	Begin Object Name=StatueFall0\n		StaticMesh=" + IceStatueText.Text + "\n		Translation=(Z=15, Y=0, X=0)\n	End Object\n	");
+                    
+                    if (checkBox1.Checked)
+                    {
+
+                        String[] SoundLines = new String[30];
+
+                        for (var num = 0; num < TestBox.Lines.Length; num++)
+                        {
+                            if (num < 30)
+                            {
+                                SoundLines[num] = TestBox.Lines[num];
+                            }
+                        }
+
+                        for (var num = 0; num < 30; num++)
+                        {
+                            if (String.IsNullOrEmpty(SoundLines[num]))
+                            {
+                                SoundLines[num] = "None";
+                            }
+
+                            if (num == 0) { writer.Write("	VoiceJump = "); }
+                            if (num == 1) { writer.Write("	VoiceWallImpact = "); }
+                            if (num == 2) { writer.Write("	VoiceAttack = "); }
+                            if (num == 3) { writer.Write("	VoiceHurt = "); }
+                            if (num == 4) { writer.Write("	VoiceHurtPant = "); }
+                            if (num == 5) { writer.Write("	VoiceHookshotCling = "); }
+                            if (num == 6) { writer.Write("	VoiceMonitorClick = "); }
+                            if (num == 7) { writer.Write("	VoiceCollectedAll = "); }
+                            if (num == 8) { writer.Write("	VoiceFreeCitizen = "); }
+                            if (num == 9) { writer.Write("	VoiceLongFallNoDmg = "); }
+                            if (num == 10) { writer.Write("	VoiceNPCTease = "); }
+                            if (num == 11) { writer.Write("	VoiceVacuumSpin = "); }
+                            if (num == 12) { writer.Write("	VoiceShopItemExamine = "); }
+                            if (num == 13) { writer.Write("	VoiceShopLeave = "); }
+                            if (num == 14) { writer.Write("	VoiceChemicalExplosion = "); }
+                            if (num == 15) { writer.Write("	VoiceHatStolen = "); }
+                            if (num == 16) { writer.Write("	VoiceDivaGreet = "); }
+                            if (num == 17) { writer.Write("	HelpAbilityHmm = "); }
+                            if (num == 18) { writer.Write("	VoiceTakePainting = "); }
+                            if (num == 19) { writer.Write("	VoiceBurnPainting = "); }
+                            if (num == 20) { writer.Write("	VoiceCounting(1) = "); }
+                            if (num == 21) { writer.Write("	VoiceCounting(2) = "); }
+                            if (num == 22) { writer.Write("	VoiceCounting(3) = "); }
+                            if (num == 23) { writer.Write("	VoiceCounting(4) = "); }
+                            if (num == 24) { writer.Write("	VoiceCounting(5) = "); }
+                            if (num == 25) { writer.Write("	VoiceHatStitch(0) = "); }
+                            if (num == 26) { writer.Write("	VoiceHatStitch(1) = "); }
+                            if (num == 27) { writer.Write("	VoiceMurderClueGotcha = "); }
+                            if (num == 28) { writer.Write("	DeathJingle = "); }
+                            if (num == 29) { writer.Write("	EndlessPitDeathJingle = "); }
+
+                            writer.WriteLine(SoundLines[num] + ";");
+                        }
+                        writer.WriteLine("");
+                    }
+                    writer.WriteLine("\n\n	// properties\n	ObjectiveActorClass = class'" + PrefixText.Text + "_ObjectiveActor_" + PlayerNameText.Text + "'\n	CanWearHatKidCosmetics = true\n	  MaterialIndexEyes = " + EyesText.Text + "\n      MaterialIndexFace = " + FaceText.Text + "\n	  MaterialSectionPonytail = " + PonytailText.Text + "\n	  \n	SkinColor = (R=" + RText.Text + ",G=" + GText.Text + ",B=" + BText.Text + ")\n\n	\n	PlayerVisualClass(0) = class'" + PrefixText.Text + "_Player_" + PlayerNameText.Text + "'\n}\n\nsimulated function UpdateSkin()\n{\n	Super.UpdateSkin();\n\n\n	Hat_InventoryManager(InvManager).RemoveCosmeticUpperBody();\n	Hat_InventoryManager(InvManager).RemoveCosmeticLegs();\n\n}\n\nsimulated event Tick(float d)\n{\n	Super.Tick(d);\n\n}\n\n\nstatic function ConvertGhostPartyPlayer(Hat_GhostPartyPlayer gp)\n{\n	if (gp.SkeletalMeshComponent == None) return;\n	gp.SkeletalMeshComponent.SetSkeletalMesh(" + FullModelText.Text + ");\n	gp.SkeletalMeshComponent.SetPhysicsAsset(PhysicsAsset'HatinTime_Characters_CoPartner.Physics.CoPartner_Physics');\n	gp.SkeletalMeshComponent.SetMaterial(0, None);\n	gp.SkeletalMeshComponent.SetMaterial(1, None);\n	gp.SkeletalMeshComponent.SetMaterial(2, None);\n	gp.SkeletalMeshComponent.SetMaterial(3, None);\n	gp.SkeletalMeshComponent.SetMaterial(4, None);\n	gp.SkeletalMeshComponent.SetMaterial(5, None);\n}\n\nstatic function ConvertNPCPlayer(Hat_NPC_Player npc)\n{\n	local Hat_ExpressionComponent exp;\n\n	npc.DisableHats = true;\n	npc.DisableMasks = true;\n	npc.DisableUpperBody = true;\n	npc.DisableLegs = true;\n	npc.AddDefaultInventory();\n\n	// fix face\n	npc.SkeletalMeshComponent.SetMaterial(0, default.Mesh.GetMaterial(0));\n	npc.SkeletalMeshComponent.SetMaterial(1, default.Mesh.GetMaterial(1));\n	npc.SkeletalMeshComponent.SetMaterial(2, default.Mesh.GetMaterial(2));\n	npc.SkeletalMeshComponent.SetMaterial(3, default.Mesh.GetMaterial(3));\n	npc.SkeletalMeshComponent.SetMaterial(4, default.Mesh.GetMaterial(4));\n	npc.SkeletalMeshComponent.SetMaterial(5, default.Mesh.GetMaterial(5));\n	exp = new class'" + BaseEXPText.Text + "';\n	npc.DetachComponent(npc.Expression);\n	npc.AttachComponent(exp);\n	npc.Expression = exp;\n	npc.Expression.Init(npc);\n}");
+
                 }
-			}
+            }
 
 			pathString = System.IO.Path.Combine(path, "Output");
 			fileName = PrefixText.Text + "_ObjectiveActor_" + PlayerNameText.Text + ".uc";
@@ -99,6 +161,20 @@ namespace Easy_Playable_Maker
         private void FullModelText_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                TestBox.Show();
+                textBox1.Show();
+            }
+            else
+            {
+                TestBox.Hide();
+                textBox1.Hide();
+            }
         }
     }
 }
