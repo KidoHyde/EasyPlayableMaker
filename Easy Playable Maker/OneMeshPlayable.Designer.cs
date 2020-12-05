@@ -425,7 +425,7 @@
             this.Controls.Add(this.MakeFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OneMeshPlayable";
-            this.Text = "Easy Playable Maker";
+            this.Text = "One Mesh Playable";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);

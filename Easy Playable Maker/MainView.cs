@@ -54,5 +54,11 @@ namespace Easy_Playable_Maker
             var OneMeshPlayable = new OneMeshPlayable();
             OneMeshPlayable.Show();
         }
+
+        private void ExpressionComponent_Click(object sender, EventArgs e)
+        {
+            var ExpressionComponent = new ExpressionComponent();
+            ExpressionComponent.Show();
+        }
     }
 }

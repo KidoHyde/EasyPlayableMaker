@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpressionComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpressionComponent.designer.cs">
+      <DependentUpon>ExpressionComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="HubSpawn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExpressionComponent.resx">
+      <DependentUpon>ExpressionComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HubSpawn.resx">
       <DependentUpon>HubSpawn.cs</DependentUpon>
     </EmbeddedResource>
