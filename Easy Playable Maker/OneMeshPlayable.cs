@@ -38,10 +38,11 @@ namespace Easy_Playable_Maker
 			Funnies[10] = "\n \n/*\nCurrywurst: \n \nCourtesy of Dranif! \n \nStep 1: \nGet a rather thick sausage and cut it into pieces (and warm it up) \n \nStep 2: \nMake some fries as garnish \n \nStep 3: \nAdd some (flavoured) Ketchup \n \nStep 4: \nAdd curry spice\n*/";
 			Funnies[11] = "\n \n/*\n3 in 1 Fry sauce combo: \n \nFrench Fry Sauce \n1/3 cup ketchup \n2/3 cup mayonnaise \n1 tsp pickle juice \n \nGarlic Aioli \n1 cup mayonnaise \n1 TBS garlic (minced) \n2 TBS lemon juice \n1/2 tsp salt \n1 pinch black pepper \n \nCheese Sauce \n8 oz Velveeta Cheese \n1/2 cup milk \nInstructions \n \nFry Sauce \nCombine ketchup, mayonnaise, pickle juice in a medium sized bowl \nStir together until smooth \n \nGarlic Aioli \nCombine your mayo, lemon juice, garlic, salt, pepper in a medium bowl, \nStir until everything is smooth \nRefrigerate for 30 minutes before serving \n \nCheese Sauce \nCut your Velveeta cheese into small cubes \nIn a small pot over medium high heat, put your cheese cubes and milk \nStirring regularly, allow cheese to melt into milk, until smooth\n*/";
 
-			string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); 
-			string pathString = System.IO.Path.Combine(path, "Output");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //It's a step in the right direction however not what I'm looking for specifically
+            string pathString = System.IO.Path.Combine(path, "Output");
+            System.IO.Directory.CreateDirectory(pathString);
 
-			if (String.IsNullOrEmpty(IceStatueText.Text)) { IceStatueText.Text = "StaticMesh'HatinTime_Habboi.models.hat_kid_crystal'"; }
+            if (String.IsNullOrEmpty(IceStatueText.Text)) { IceStatueText.Text = "StaticMesh'HatinTime_Habboi.models.hat_kid_crystal'"; }
 			if (String.IsNullOrEmpty(PlayerIconText.Text)) { PlayerIconText.Text = "None"; }
 			if (String.IsNullOrEmpty(PrefixText.Text)) { PrefixText.Text = "Kido"; }
 			if (String.IsNullOrEmpty(PlayerNameText.Text)) { PlayerNameText.Text = "PLAYERNAME"; }

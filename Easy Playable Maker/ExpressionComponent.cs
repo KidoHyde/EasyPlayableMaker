@@ -22,10 +22,11 @@ namespace Easy_Playable_Maker
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); 
-			string pathString = System.IO.Path.Combine(path, "Output");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //It's a step in the right direction however not what I'm looking for specifically
+            string pathString = System.IO.Path.Combine(path, "Output");
+            System.IO.Directory.CreateDirectory(pathString);
 
-			if (String.IsNullOrEmpty(PrefixText.Text)) { PrefixText.Text = "Kido"; }
+            if (String.IsNullOrEmpty(PrefixText.Text)) { PrefixText.Text = "Kido"; }
 			if (String.IsNullOrEmpty(PlayerNameText.Text)) { PlayerNameText.Text = "PLAYERNAME"; }
 			if (String.IsNullOrEmpty(FaceText.Text)) { FaceText.Text = "-1"; }
 			if (String.IsNullOrEmpty(EyesText.Text)) { EyesText.Text = "-1"; }

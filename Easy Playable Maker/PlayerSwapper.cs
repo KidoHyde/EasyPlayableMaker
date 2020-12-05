@@ -27,8 +27,9 @@ namespace Easy_Playable_Maker
 
         private void MakeFile_Click(object sender, EventArgs e)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //It's a step in the right direction however not what I'm looking for specifically
             string pathString = System.IO.Path.Combine(path, "Output");
+            System.IO.Directory.CreateDirectory(pathString);
 
             if (String.IsNullOrEmpty(BkText.Text)) { BkText.Text = "None";}
             if (String.IsNullOrEmpty(HkText.Text)) { HkText.Text = "None"; }
