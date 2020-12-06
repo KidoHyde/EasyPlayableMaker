@@ -733,6 +733,7 @@
             this.RadEXPText.Name = "RadEXPText";
             this.RadEXPText.Size = new System.Drawing.Size(205, 20);
             this.RadEXPText.TabIndex = 70;
+            this.RadEXPText.TextChanged += new System.EventHandler(this.RadEXPText_TextChanged);
             // 
             // PonytailText
             // 

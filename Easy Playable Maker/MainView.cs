@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Easy_Playable_Maker.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,18 @@ namespace Easy_Playable_Maker
         public MainView()
         {
             InitializeComponent();
+
+            var UpdateChk = new UpdateChecker(BuildData.CurrentVersion, BuildData.UpdateUrl, new Action(() => {
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    var dialog = MessageBox.Show(this, "New version of Easy Playable Maker is avaiable!\nDownload now?", "Update checker", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        Process.Start(BuildData.ReleasesPage);
+                    }
+                }));
+            }));
+            UpdateChk.CheckForUpdatesAsync();
         }
 
         private void PlayerSwapper_Load(object sender, EventArgs e)

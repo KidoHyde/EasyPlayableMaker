@@ -100,7 +100,7 @@
             this.ExpressionComponent.Name = "ExpressionComponent";
             this.ExpressionComponent.Size = new System.Drawing.Size(158, 73);
             this.ExpressionComponent.TabIndex = 5;
-            this.ExpressionComponent.Text = "Expression Component (Unfinished)";
+            this.ExpressionComponent.Text = "Expression Component";
             this.ExpressionComponent.UseVisualStyleBackColor = true;
             this.ExpressionComponent.Click += new System.EventHandler(this.ExpressionComponent_Click);
             // 
