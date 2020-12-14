@@ -335,6 +335,7 @@
             // 
             // PlayerSwapper
             // 
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(704, 320);
             this.Controls.Add(this.Output);
             this.Controls.Add(this.MakeFile);

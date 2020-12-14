@@ -35,8 +35,6 @@
             this.MakeFile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.PrefixText = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Z = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +42,9 @@
             this.Pitch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Yaw = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StaticMesh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScaleWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Scale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrefixText = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,29 +106,12 @@
             this.Pitch,
             this.Yaw,
             this.StaticMesh,
-            this.ScaleWord});
+            this.Scale});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(842, 150);
             this.dataGridView1.TabIndex = 113;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // PrefixText
-            // 
-            this.PrefixText.Location = new System.Drawing.Point(120, 174);
-            this.PrefixText.Name = "PrefixText";
-            this.PrefixText.Size = new System.Drawing.Size(205, 20);
-            this.PrefixText.TabIndex = 115;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
-            this.label2.TabIndex = 114;
-            this.label2.Text = "Prefix";
             // 
             // X
             // 
@@ -167,11 +150,29 @@
             // 
             // Scale
             // 
-            this.ScaleWord.HeaderText = "Scale";
-            this.ScaleWord.Name = "Scale";
+            this.Scale.HeaderText = "Scale";
+            this.Scale.Name = "Scale";
+            // 
+            // PrefixText
+            // 
+            this.PrefixText.Location = new System.Drawing.Point(120, 174);
+            this.PrefixText.Name = "PrefixText";
+            this.PrefixText.Size = new System.Drawing.Size(205, 20);
+            this.PrefixText.TabIndex = 115;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(20, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 114;
+            this.label2.Text = "Prefix";
             // 
             // HubSpawn
             // 
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(887, 331);
             this.Controls.Add(this.PrefixText);
             this.Controls.Add(this.label2);
@@ -207,6 +208,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Yaw;
         private System.Windows.Forms.DataGridViewTextBoxColumn StaticMesh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ScaleWord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Scale;
     }
 }
 

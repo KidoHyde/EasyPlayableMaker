@@ -106,6 +106,7 @@
             // 
             // MainView
             // 
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(394, 393);
             this.Controls.Add(this.ExpressionComponent);
             this.Controls.Add(this.button2);
